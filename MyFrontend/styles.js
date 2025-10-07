@@ -19,11 +19,11 @@ const Styles = StyleSheet.create({
 
   button: {
     width: '20%',
-    backgroundColor: '#3498db',
+    backgroundColor: '#3e6ff8ff',
     paddingVertical: 15,
     borderRadius: 10,
     alignItems: 'center',
-    marginTop: 20,
+    marginTop: 30,
     elevation: 3,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
@@ -40,12 +40,12 @@ const Styles = StyleSheet.create({
   input: {
     width: '25%',
     height: 50,
-    borderColor: '#CBDCEB',
+    borderColor: '#000000ff',
     borderWidth: 1,
     borderRadius: 10,
     paddingHorizontal: 15,
     marginBottom: 15,
-    backgroundColor: '#fff',
+    backgroundColor: '#e0d6d6ff',
   },
 
   subheading: {
@@ -57,7 +57,7 @@ const Styles = StyleSheet.create({
 
   infoContainer: {
     width: '25%',
-    backgroundColor: '#fff',
+    backgroundColor: '#e0d6d6ff',
     padding: 20,
     borderRadius: 10,
     elevation: 2,
@@ -73,6 +73,35 @@ const Styles = StyleSheet.create({
     color: '#333',
     marginBottom: 10,
   },
+
+userBox: {
+  backgroundColor: '#707070ff',
+  padding: 15,
+  borderRadius: 10,
+  marginBottom: 15,
+  shadowColor: '#000',
+  shadowOffset: { width: 0, height: 2 },
+  shadowOpacity: 0.1,
+  shadowRadius: 3,
+  elevation: 2,
+  },
+
+  userInfo: {
+  fontSize: 16,
+  color: 'white',
+  textAlign: 'center',
+  marginBottom: 5,
+  },
+
+  userTitle: {
+  fontSize: 24,
+  fontWeight: 'bold',
+  color: 'black',
+  marginBottom: 20,
+  marginTop: 10,  
+  textAlign: 'center',
+  }
+
 });
 
 export default Styles;
