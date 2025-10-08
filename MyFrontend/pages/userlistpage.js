@@ -1,11 +1,9 @@
-import {View, Text, Button} from "react-native";
+import {View, Text, FlatList, Button} from "react-native";
 import axios from "axios";
-import { FlatList } from "react-native-web";
-import {useState,useEffect } from "react";
-import Styles from "../styles";
+import {useState, useEffect} from "react";
+import styles from "../styles";
 
-
-export default function userlistpage({navigation}) {
+export default function UserListPage({navigation}){
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
@@ -13,26 +11,46 @@ export default function userlistpage({navigation}) {
         .then((res) => {
             setUsers(res.data);
         })
-        .catch((err) => {
-            console.log(err);
-        });
+        .catch((err) =>{
+            console.error(err);
+        })
     },[]
-    );  
+    );
+
+    const handleEdit = (user) => {
+        navigation.navigate("EditUser", {userId: user.id});
+    };
 
     return (
-        <View>
-            <Text style={Styles.userTitle}>Registered Users</Text>
+        <View style={styles.container}>
+            <Text style={styles.title}>Registered Users</Text>
             <FlatList 
-            data={users}
-            keyExtractor={(item) => item.id.toString()}
-            renderItem={({item}) => (
-                <View style={Styles.userBox}>
-                    <Text style={Styles.userInfo}>Firstname: {item.first_name}</Text>
-                    <Text style={Styles.userInfo}>Lastname: {item.last_name}</Text>
-                    <Text style={Styles.userInfo}>Email: {item.email}</Text>
-                    <Text style={Styles.userInfo}>Gender: {item.gender}</Text>
-                </View>
-            )}/>
+                data={users} 
+                style={styles.flatListContainer}
+                keyExtractor={(item) => item.id.toString()} 
+                renderItem={({item}) => (
+                    <View style={styles.userCard}>
+                        <Text style={styles.userInfo}>
+                            <Text style={styles.userLabel}>First Name: </Text>
+                            {item.first_name}
+                        </Text>
+                        <Text style={styles.userInfo}>
+                            <Text style={styles.userLabel}>Last Name: </Text>
+                            {item.last_name}
+                        </Text>
+                        <Text style={styles.userInfo}>
+                            <Text style={styles.userLabel}>Email: </Text>
+                            {item.email}
+                        </Text>
+                        <View>
+                            <Button title="Edit" color="#666666ff"
+                            onPress={() => handleEdit(item)}></Button>
+                            <Button title="Delete"
+                            color="red"></Button>
+                        </View>
+                    </View>
+                )}
+            />
         </View>
-    );
+    )
 }

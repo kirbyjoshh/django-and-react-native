@@ -1,107 +1,113 @@
 import { StyleSheet } from 'react-native';
 
-const Styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#ffffffff',
-  },
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#f0f4fb', 
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 16,
+    },
 
-  headerText: {
-    fontSize: 50,
-    fontWeight: '800',
-    color: 'black',
-    textAlign: 'center',
-    paddingHorizontal: 20,
-    marginBottom: 40,
-  },
+    title: {
+        fontSize: 50, 
+        fontWeight: '700', 
+        color: '#2c3e50', 
+        marginBottom: 28, 
+        textAlign: 'center',
+        letterSpacing: 0.6,
+    },
 
-  button: {
-    width: '20%',
-    backgroundColor: '#3e6ff8ff',
-    paddingVertical: 15,
-    borderRadius: 10,
-    alignItems: 'center',
-    marginTop: 30,
-    elevation: 3,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-  },
+   
+    button: {
+        backgroundColor: '#062049ff', 
+        padding: 14,
+        width: '30%', 
+        color: '#ffffff',
+        borderRadius: 20,
+        alignItems: 'center',
+        elevation: 4,
+        marginTop: 16,
+        marginBottom: 10, 
+    },
+    
 
-  buttonText: {
-    color: 'white',
-    fontWeight: 'bold',
-    fontSize: 18,
-  },
+    viewUserButton: {
+        backgroundColor: '#000000ff', 
+        padding: 20,
+        width: '10%', 
+        borderRadius: 10,
+        alignItems: 'center',
+        shadowColor: '#000000ff', 
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.3,
+        shadowRadius: 5,
+        elevation: 4,
+        marginTop: 25, 
+    },
 
-  input: {
-    width: '25%',
-    height: 50,
-    borderColor: '#000000ff',
-    borderWidth: 1,
-    borderRadius: 10,
-    paddingHorizontal: 15,
-    marginBottom: 15,
-    backgroundColor: '#e0d6d6ff',
-  },
+    
+    viewUserButtonText: {
+        color: '#2c3e50', 
+        fontSize: 50,
+        fontWeight: '600',
+    },
 
-  subheading: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: '#34495e',
-    marginBottom: 10,
-  },
+    input: {
+        width: '20%', 
+        padding: 14, 
+        marginVertical: 12, 
+        borderColor: '#052861ff', 
+        backgroundColor: '#ffffff', 
+        borderWidth: 1.5, 
+        borderRadius: 12, 
+        fontSize: 16,
+        color: '#000000ff', 
+        shadowColor: '#00000033',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.15,
+        shadowRadius: 4,
+        elevation: 2,
+    },
 
-  infoContainer: {
-    width: '25%',
-    backgroundColor: '#e0d6d6ff',
-    padding: 20,
-    borderRadius: 10,
-    elevation: 2,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.2,
-    shadowRadius: 1.41,
-    marginBottom: 20,
-  },
+    list_user:{
+        padding: 10,
+        marginVertical: 8,
+        borderColor: '#0f0f0fff',
+        backgroundColor: '#96ffff71',
+        borderWidth: 1,
+        borderRadius: 8,
+        fontSize: 16,
+        color: '#000000ff',
+    },
 
-  infoText: {
-    fontSize: 18,
-    color: '#333',
-    marginBottom: 10,
-  },
+    userCard: {
+        backgroundColor: '#ffffff',
+        margin: 40,
+        padding: 50,
+        borderRadius: 12,
+        shadowRadius: 3.84,
+        elevation: 5,
+        borderWidth: 1,
+        borderColor: '#e0e0e0',
+    },
 
-userBox: {
-  backgroundColor: '#707070ff',
-  padding: 15,
-  borderRadius: 10,
-  marginBottom: 15,
-  shadowColor: '#000',
-  shadowOffset: { width: 0, height: 2 },
-  shadowOpacity: 0.1,
-  shadowRadius: 3,
-  elevation: 2,
-  },
+    userInfo: {
+        fontSize: 15,
+        marginBottom: 6,
+        color: '#333',
+    },
 
-  userInfo: {
-  fontSize: 16,
-  color: 'white',
-  textAlign: 'center',
-  marginBottom: 5,
-  },
+    userLabel: {
+        fontWeight: 'bold',
+        color: '#666',
+    },
 
-  userTitle: {
-  fontSize: 24,
-  fontWeight: 'bold',
-  color: 'black',
-  marginBottom: 20,
-  marginTop: 10,  
-  textAlign: 'center',
-  }
-
+    flatListContainer: {
+        flex: 1,
+        width: '100%',
+        paddingHorizontal: 8,
+    }
 });
 
-export default Styles;
+export default styles;

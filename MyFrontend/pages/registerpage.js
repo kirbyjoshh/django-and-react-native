@@ -1,66 +1,63 @@
-import React, { useState } from 'react';
-import { View, Text, Button, TextInput } from 'react-native';
-import Styles from '../styles.js';
 
-export default function RegisterPage({ navigation }) {
-    const [formData, setFormData] = useState({
-        first_name: "",
-        last_name: "",
-        email: "",
-        password: "",
-        gender: "",
-    });
+import React, { useState } from "react";
+import { View, Text, Button } from "react-native";
+import styles from "../styles";
+import {TextInput} from 'react-native-web';
 
-    const handleChange = (field, value) => {
-        setFormData({ ...formData, [field]: value });
-    };
-
+export default function RegisterPage({navigation}){
+const[formData, setFormData]=useState({
+    first_name:"",
+    last_name:"",
+    email:"",
+    password:"",
+    date_registration:"",
+    gender:"",
+});
+const handleChange =(field, value) => {
+    setFormData({...formData, [field]: value});
+};
     return (
-        <View style={Styles.container}>
-            <Text style={Styles.headerText}>User Registration</Text>
-
+        <View style={styles.container}>
+            <Text style={styles.title}>User Registration</Text>
+       
             <TextInput
-                style={Styles.input} 
-                placeholder="First Name"
-                value={formData.first_name}
+                style={styles.input} 
+                placeholder="First name" 
+                value={formData.first_name} 
                 onChangeText={(text) => handleChange("first_name", text)}
             />
-
-            <TextInput
-                style={Styles.input}
-                placeholder="Last Name"
-                value={formData.last_name}
+            <TextInput 
+                style={styles.input}
+                placeholder="Last name" 
+                value={formData.last_name} 
                 onChangeText={(text) => handleChange("last_name", text)}
             />
-
             <TextInput
-                style={Styles.input}
-                placeholder="Email"
-                value={formData.email}
+                style={styles.input} 
+                placeholder="Email" 
+                value={formData.email} 
                 onChangeText={(text) => handleChange("email", text)}
             />
-
-            <TextInput
-                style={Styles.input}
-                placeholder="Password"
-                value={formData.password}
-                secureTextEntry={true}
+            <TextInput 
+                style={styles.input}
+                placeholder="Password" 
+                secureTextEntry
+                value={formData.password} 
                 onChangeText={(text) => handleChange("password", text)}
             />
-
-            <TextInput
-                style={Styles.input}
-                placeholder="Gender"
-                value={formData.gender}
+            <TextInput 
+                style={styles.input}
+                placeholder="Gender" 
+                value={formData.gender} 
                 onChangeText={(text) => handleChange("gender", text)}
             />
 
-            <View style={Styles.buttonWrapper}>
-                <Button
-                    title="Submit"
-                    onPress={() => navigation.navigate("Review", { formData })}
-                />
+            <View>
+                <Button title="Review and Submit" 
+                onPress={() => navigation.navigate("Review", {formData})}></Button>
             </View>
-        </View>
+
+         </View>
+    
     );
 }
